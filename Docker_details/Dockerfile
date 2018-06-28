@@ -25,8 +25,10 @@ MAINTAINER Nathaniel Butterworth
 # RUN pip install -e /build/pyBadlands-Companion
 
 WORKDIR /build
-RUN git clone https://github.com/badlands-model/Bayeslands-Workshop.git
-RUN pip install -e /build/Bayeslands-Workshop
+RUN git clone https://github.com/badlands-model/Bayeslands_Workshop.git
+WORKDIR /build/Bayeslands_Workshop/pyBadlands/libUtils
+RUN make
+RUN pip install -e /build/Bayeslands_Workshop
 
 ENV TINI_VERSION v0.8.4
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/local/bin/tini
@@ -40,7 +42,7 @@ RUN mkdir /workspace
 
 
 # Copy test files to workspace
-RUN cp -av /build/Bayeslands-Workshop/ /workspace/
+RUN cp -av /build/Bayeslands_Workshop/ /workspace/
 # RUN cp -av /build/pyBadlands-Companion/notebooks/* /workspace/companion/
 # RUN cp -av /build/paralleltemp_Bayeslands/ptBayeslands_mountain.py /workspace/scripts
 
@@ -55,6 +57,6 @@ WORKDIR /workspace
 EXPOSE 8888
 ENTRYPOINT ["/usr/local/bin/tini", "--"]
 
-ENV LD_LIBRARY_PATH=/workspace/volume/Bayeslands-Workshop/pyBadlands/libUtils:/build/Bayeslands-Workshop/pyBadlands/libUtils
+ENV LD_LIBRARY_PATH=/workspace/volume/Bayeslands_Workshop/pyBadlands/libUtils:/build/Bayeslands_Workshop/pyBadlands/libUtils
 #CMD /build/run.sh
 CMD jupyter notebook -ip=0.0.0.0 --NotebookApp.default_url='/tree/StartHere.ipynb'

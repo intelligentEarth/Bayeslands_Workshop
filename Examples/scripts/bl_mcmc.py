@@ -44,7 +44,7 @@ from mpl_toolkits.mplot3d import Axes3D
 from scipy.stats import multivariate_normal
 from plotly.graph_objs import *
 from plotly.offline.offline import _plot_html
-# plotly.offline.init_notebook_mode()
+#plotly.offline.init_notebook_mode()
 
 class bayeslands_mcmc():
 	"""

@@ -17,7 +17,7 @@ This repo is at http://github.com/badlands-model/Bayeslands-Workshop
 
 The easiest way to install and run the **Bayeslands Workshop** is by downloading through Docker.
 
-Download the [dockerfile](/Bayeslands_Workshop/Docker_details/Dockerfile) 
+Download the [dockerfile](https://github.com/badlands-model/Bayeslands_Workshop/blob/master/Docker_details/Dockerfile) 
 
 Change into the folder with the docker file, then execute:
 
@@ -57,17 +57,17 @@ Following the notebooks in order will guide you through understanding how the Ba
 
 The pre-processing notebooks will help you to create surface grids for generic, real (based on etopo1) topographic/bathymetric datasets.
 
-* [Generic Surface](/Bayeslands_Workshop/Examples/topoCreate.ipynb): generic surface generation notebook.
-* [etopo1 Surface](/Bayeslands_Workshop/Examples/etopoGen.ipynb): etopo1 surface generation notebook.
-* [Bayeslands Surface](/Bayeslands_Workshop/Examples/bl_topogenr.ipynb): surface to run and test models against.
+* [Generic Surface](https://github.com/badlands-model/Bayeslands_Workshop/blob/master/Examples/topoCreate.ipynb): generic surface generation notebook.
+* [etopo1 Surface](https://github.com/badlands-model/Bayeslands_Workshop/blob/master/Examples/etopoGen.ipynb): etopo1 surface generation notebook.
+* [Bayeslands Surface](https://github.com/badlands-model/Bayeslands_Workshop/blob/master/Examples/bl_topogenr.ipynb): surface to run and test models against.
 
 
 ### Running Badlands and Bayeslands
 
 We provide a full examples that create a surface and then runs multiple simulations to estimate uncertainties in your parameter selections.
 
-* [Bayeslands Crater Example](/Bayeslands_Workshop/Examples/bl_mcmc.ipynb): surface to run and test models against.
-* [PT Bayeslands Crater Example](/Bayeslands_Workshop/Examples/ptBayeslands.ipynb): surface to run and test models against using parallel tempering.
+* [Bayeslands Crater Example](https://github.com/badlands-model/Bayeslands_Workshop/blob/master/Examples/bl_mcmc.ipynb): surface to run and test models against.
+* [PT Bayeslands Crater Example](https://github.com/badlands-model/Bayeslands_Workshop/blob/master/Examples/ptBayeslands.ipynb): surface to run and test models against using parallel tempering.
 
  
  
@@ -75,7 +75,7 @@ We provide a full examples that create a surface and then runs multiple simulati
 
 Many post processing analysis steps can be done to produce various figures and interrogate different parts of the numerical model.
 
-* [Likelihood surface creation](/Bayeslands_Workshop/Examples/bl_surflikl.ipynb): explores the the parameter space in evaluating the model.
+* [Likelihood surface creation](https://github.com/badlands-model/Bayeslands_Workshop/blob/master/Examples/bl_surflikl.ipynb): explores the the parameter space in evaluating the model.
 
 
 # Additional notes

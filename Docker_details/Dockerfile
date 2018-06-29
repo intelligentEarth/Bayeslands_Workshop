@@ -59,4 +59,4 @@ ENTRYPOINT ["/usr/local/bin/tini", "--"]
 
 ENV LD_LIBRARY_PATH=/workspace/volume/Bayeslands_Workshop/pyBadlands/libUtils:/build/Bayeslands_Workshop/pyBadlands/libUtils
 #CMD /build/run.sh
-CMD jupyter notebook -ip=0.0.0.0 --NotebookApp.default_url='/tree/StartHere.ipynb'
+CMD jupyter notebook --ip=0.0.0.0 --no-browser --allow-root 

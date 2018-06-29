@@ -43,7 +43,7 @@ from mpl_toolkits.mplot3d import Axes3D
 from scipy.stats import multivariate_normal
 from plotly.graph_objs import *
 from plotly.offline.offline import _plot_html
-plotly.offline.init_notebook_mode()
+#plotly.offline.init_notebook_mode()
 import pandas as pd
 
 
@@ -404,63 +404,63 @@ def checkUplift(directory, u_filename, t_filename):
 	
 	return True
 
-def main():
-	"""
+# def main():
+# 	"""
 	
-	"""
-	uplift_verified = False
-	choice = input("Please choose a Badlands example to create an Initial and Final Topography for:\n 1) crater_fast\n 2) crater\n 3) etopo_fast\n 4) etopo\n 5) mountain\n")
-	directory = ""
+# 	"""
+# 	uplift_verified = False
+# 	choice = input("Please choose a Badlands example to create an Initial and Final Topography for:\n 1) crater_fast\n 2) crater\n 3) etopo_fast\n 4) etopo\n 5) mountain\n")
+# 	directory = ""
 
-	erdp_coords_crater = np.array([[60,60],[52,67],[74,76],[62,45],[72,66],[85,73],[90,75],[44,86],[100,80],[88,69]])
-	erdp_coords_crater_fast = np.array([[60,60],[72,66],[85,73],[90,75],[44,86],[100,80],[88,69],[79,91],[96,77],[42,49]])
-	erdp_coords_etopo = np.array([[42,10],[39,8],[75,51],[59,13],[40,5],[6,20],[14,66],[4,40],[72,73],[46,64]])
-	erdp_coords_etopo_fast = np.array([[42,10],[39,8],[75,51],[59,13],[40,5],[6,20],[14,66],[4,40],[68,40],[72,44]])
-	erdp_coords_mountain = np.array([[5,5],[10,10],[20,20],[30,30],[40,40],[50,50],[25,25],[37,30],[44,27],[46,10]])
+# 	erdp_coords_crater = np.array([[60,60],[52,67],[74,76],[62,45],[72,66],[85,73],[90,75],[44,86],[100,80],[88,69]])
+# 	erdp_coords_crater_fast = np.array([[60,60],[72,66],[85,73],[90,75],[44,86],[100,80],[88,69],[79,91],[96,77],[42,49]])
+# 	erdp_coords_etopo = np.array([[42,10],[39,8],[75,51],[59,13],[40,5],[6,20],[14,66],[4,40],[72,73],[46,64]])
+# 	erdp_coords_etopo_fast = np.array([[42,10],[39,8],[75,51],[59,13],[40,5],[6,20],[14,66],[4,40],[68,40],[72,44]])
+# 	erdp_coords_mountain = np.array([[5,5],[10,10],[20,20],[30,30],[40,40],[50,50],[25,25],[37,30],[44,27],[46,10]])
 	
-	final_noise = True
+# 	final_noise = True
 
-	if choice == 1:
+# 	if choice == 1:
 		
-		tstart = time.clock()
-		directory = 'Examples/crater_fast'
-		topoGenerator(directory,'%s/crater.xml' %(directory), 1.5 , 5.e-5, 0.5, 1, 15000, erdp_coords_crater,final_noise)
+# 		tstart = time.clock()
+# 		directory = 'Examples/crater_fast'
+# 		topoGenerator(directory,'%s/crater.xml' %(directory), 1.5 , 5.e-5, 0.5, 1, 15000, erdp_coords_crater,final_noise)
 		
-		print 'TopoGen for crater_fast completed in (s):',time.clock()-tstart
+# 		print 'TopoGen for crater_fast completed in (s):',time.clock()-tstart
 		
-	elif choice == 2:
+# 	elif choice == 2:
 		
-		tstart = time.clock()
-		directory = 'Examples/crater'
-		topoGenerator(directory,'%s/crater.xml' %(directory), 1.5 , 5.e-5, 0.5, 1, 50000, erdp_coords_crater,final_noise)
+# 		tstart = time.clock()
+# 		directory = 'Examples/crater'
+# 		topoGenerator(directory,'%s/crater.xml' %(directory), 1.5 , 5.e-5, 0.5, 1, 50000, erdp_coords_crater,final_noise)
 		
-		print 'TopoGen for crater completed in (s):',time.clock()-tstart
+# 		print 'TopoGen for crater completed in (s):',time.clock()-tstart
 
-	elif choice == 3:
+# 	elif choice == 3:
 
-		tstart = time.clock()
-		directory = 'Examples/etopo_fast'
-		topoGenerator(directory,'%s/etopo.xml' %(directory), 1.5 , 5.e-6, 0.5, 1, 500000, erdp_coords_etopo,final_noise)
+# 		tstart = time.clock()
+# 		directory = 'Examples/etopo_fast'
+# 		topoGenerator(directory,'%s/etopo.xml' %(directory), 1.5 , 5.e-6, 0.5, 1, 500000, erdp_coords_etopo,final_noise)
 		
-		print 'TopoGen for etopo fast completed in (s):',time.clock()-tstart
+# 		print 'TopoGen for etopo fast completed in (s):',time.clock()-tstart
 
-	elif choice == 4:
+# 	elif choice == 4:
 
-		tstart = time.clock()
-		directory = 'Examples/etopo'
-		topoGenerator(directory,'%s/etopo.xml' %(directory), 1.5 , 5.e-6, 0.5, 1, 1000000, erdp_coords_etopo,final_noise)
+# 		tstart = time.clock()
+# 		directory = 'Examples/etopo'
+# 		topoGenerator(directory,'%s/etopo.xml' %(directory), 1.5 , 5.e-6, 0.5, 1, 1000000, erdp_coords_etopo,final_noise)
 		
-		print 'TopoGen for etopo completed in (s):',time.clock()-tstart
+# 		print 'TopoGen for etopo completed in (s):',time.clock()-tstart
 
-	elif choice == 5:
+# 	elif choice == 5:
 
-		tstart = time.clock()
-		directory = 'Examples/mountain'
-		#uplift_verified = checkUplift(directory, '/data/uplift', '/data/nodes')
-		# uplift_verified = True
-		#if uplift_verified:
-        topoGenerator(directory,'%s/mountain.xml' %(directory), 1.5 , 5.e-6, 0.5, 1.0, 1000000, erdp_coords_mountain,final_noise)
+# 		tstart = time.clock()
+# 		directory = 'Examples/mountain'
+# 		#uplift_verified = checkUplift(directory, '/data/uplift', '/data/nodes')
+# 		# uplift_verified = True
+# 		#if uplift_verified:
+#         topoGenerator(directory,'%s/mountain.xml' %(directory), 1.5 , 5.e-6, 0.5, 1.0, 1000000, erdp_coords_mountain,final_noise)
         
-		#print 'TopoGen for mountain completed in (s):',time.clock()-tstart
+# 		#print 'TopoGen for mountain completed in (s):',time.clock()-tstart
 
-if __name__ == "__main__": main()
+# if __name__ == "__main__": main()

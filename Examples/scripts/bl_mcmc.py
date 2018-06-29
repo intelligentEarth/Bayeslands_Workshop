@@ -44,7 +44,7 @@ from mpl_toolkits.mplot3d import Axes3D
 from scipy.stats import multivariate_normal
 from plotly.graph_objs import *
 from plotly.offline.offline import _plot_html
-plotly.offline.init_notebook_mode()
+# plotly.offline.init_notebook_mode()
 
 class bayeslands_mcmc():
 	"""
@@ -741,96 +741,96 @@ class bayeslands_mcmc():
 		self.viewCrossSection(list_xslicepred.T, list_yslicepred.T)
 		return
 
-def main():
-	"""
+# def main():
+# 	"""
 		
-	"""
-	random.seed(time.time())
-	muted = True
-	run_nb = 0
-	directory = ""
-	likl_sed = False
-	erdp_coords_crater = np.array([[60,60],[52,67],[74,76],[62,45],[72,66],[85,73],[90,75],[44,86],[100,80],[88,69]])
-	erdp_coords_crater_fast = np.array([[60,60],[72,66],[85,73],[90,75],[44,86],[100,80],[88,69],[79,91],[96,77],[42,49]])
-	erdp_coords_etopo = np.array([[42,10],[39,8],[75,51],[59,13],[40,5],[6,20],[14,66],[4,40],[72,73],[46,64]])
-	erdp_coords_etopo_fast = np.array([[42,10],[39,8],[75,51],[59,13],[40,5],[6,20],[14,66],[4,40],[68,40],[72,44]])
+# 	"""
+# 	random.seed(time.time())
+# 	muted = True
+# 	run_nb = 0
+# 	directory = ""
+# 	likl_sed = False
+# 	erdp_coords_crater = np.array([[60,60],[52,67],[74,76],[62,45],[72,66],[85,73],[90,75],[44,86],[100,80],[88,69]])
+# 	erdp_coords_crater_fast = np.array([[60,60],[72,66],[85,73],[90,75],[44,86],[100,80],[88,69],[79,91],[96,77],[42,49]])
+# 	erdp_coords_etopo = np.array([[42,10],[39,8],[75,51],[59,13],[40,5],[6,20],[14,66],[4,40],[72,73],[46,64]])
+# 	erdp_coords_etopo_fast = np.array([[42,10],[39,8],[75,51],[59,13],[40,5],[6,20],[14,66],[4,40],[68,40],[72,44]])
 
-	choice = input("Please choose a Badlands example to run the MCMC algorithm on:\n 1) crater_fast\n 2) crater\n 3) etopo_fast\n 4) etopo\n")
-	samples = input("Please enter number of samples : \n")
+# 	choice = input("Please choose a Badlands example to run the MCMC algorithm on:\n 1) crater_fast\n 2) crater\n 3) etopo_fast\n 4) etopo\n")
+# 	samples = input("Please enter number of samples : \n")
 
-	if choice == 1:
-		directory = 'Examples/crater_fast'
-		xmlinput = '%s/crater.xml' %(directory)
-		simtime = 15000
-		rainlimits = [0.0, 3.0]
-		erodlimits = [3.e-5, 7.e-5]
-		mlimit = [0.4, 0.6]
-		nlimit = [0.9, 1.1]
-		true_rain = 1.5
-		true_erod = 5.e-5
-		likl_sed = True
-		erdp_coords = erdp_coords_crater_fast
+# 	if choice == 1:
+# 		directory = 'Examples/crater_fast'
+# 		xmlinput = '%s/crater.xml' %(directory)
+# 		simtime = 15000
+# 		rainlimits = [0.0, 3.0]
+# 		erodlimits = [3.e-5, 7.e-5]
+# 		mlimit = [0.4, 0.6]
+# 		nlimit = [0.9, 1.1]
+# 		true_rain = 1.5
+# 		true_erod = 5.e-5
+# 		likl_sed = True
+# 		erdp_coords = erdp_coords_crater_fast
 
-	elif choice == 2:
-		directory = 'Examples/crater'
-		xmlinput = '%s/crater.xml' %(directory)
-		simtime = 50000
-		rainlimits = [0.0, 3.0]
-		erodlimits = [3.e-5, 7.e-5]
-		mlimit = [0.4, 0.6]
-		nlimit = [0.9, 1.1]
-		true_rain = 1.5
-		true_erod = 5.e-5
-		likl_sed = True
-		erdp_coords = erdp_coords_crater
+# 	elif choice == 2:
+# 		directory = 'Examples/crater'
+# 		xmlinput = '%s/crater.xml' %(directory)
+# 		simtime = 50000
+# 		rainlimits = [0.0, 3.0]
+# 		erodlimits = [3.e-5, 7.e-5]
+# 		mlimit = [0.4, 0.6]
+# 		nlimit = [0.9, 1.1]
+# 		true_rain = 1.5
+# 		true_erod = 5.e-5
+# 		likl_sed = True
+# 		erdp_coords = erdp_coords_crater
 
-	elif choice == 3:
-		directory = 'Examples/etopo_fast'
-		xmlinput = '%s/etopo.xml' %(directory)
-		simtime = 500000
-		rainlimits = [0.0, 3.0]
-		erodlimits = [3.e-6, 7.e-6]
-		mlimit = [0.4, 0.6]
-		nlimit = [0.9, 1.1]
-		true_rain = 1.5
-		true_erod = 5.e-6
-		likl_sed = True
-		erdp_coords = erdp_coords_etopo_fast
+# 	elif choice == 3:
+# 		directory = 'Examples/etopo_fast'
+# 		xmlinput = '%s/etopo.xml' %(directory)
+# 		simtime = 500000
+# 		rainlimits = [0.0, 3.0]
+# 		erodlimits = [3.e-6, 7.e-6]
+# 		mlimit = [0.4, 0.6]
+# 		nlimit = [0.9, 1.1]
+# 		true_rain = 1.5
+# 		true_erod = 5.e-6
+# 		likl_sed = True
+# 		erdp_coords = erdp_coords_etopo_fast
 
-	elif choice == 4:
-		directory = 'Examples/etopo'
-		xmlinput = '%s/etopo.xml' %(directory)
-		simtime = 1000000
-		rainlimits = [0.0, 3.0]
-		erodlimits = [3.e-6, 7.e-6]
-		mlimit = [0.4, 0.6]
-		nlimit = [0.9, 1.1]
-		true_rain = 1.5
-		true_erod = 5.e-6
-		likl_sed = True
-		erdp_coords = erdp_coords_etopo
+# 	elif choice == 4:
+# 		directory = 'Examples/etopo'
+# 		xmlinput = '%s/etopo.xml' %(directory)
+# 		simtime = 1000000
+# 		rainlimits = [0.0, 3.0]
+# 		erodlimits = [3.e-6, 7.e-6]
+# 		mlimit = [0.4, 0.6]
+# 		nlimit = [0.9, 1.1]
+# 		true_rain = 1.5
+# 		true_erod = 5.e-6
+# 		likl_sed = True
+# 		erdp_coords = erdp_coords_etopo
 
-	else:
-		print('Invalid selection, please choose a problem from the list ')
+# 	else:
+# 		print('Invalid selection, please choose a problem from the list ')
 
-	final_elev = np.loadtxt('%s/data/final_elev.txt' %(directory))
-	final_erdp = np.loadtxt('%s/data/final_erdp.txt' %(directory))
-	final_erdp_pts = np.loadtxt('%s/data/final_erdp_pts.txt' %(directory))	
+# 	final_elev = np.loadtxt('%s/data/final_elev.txt' %(directory))
+# 	final_erdp = np.loadtxt('%s/data/final_erdp.txt' %(directory))
+# 	final_erdp_pts = np.loadtxt('%s/data/final_erdp_pts.txt' %(directory))	
 
-	while os.path.exists('%s/mcmcresults_%s' % (directory,run_nb)):
-		run_nb+=1
-	if not os.path.exists('%s/mcmcresults_%s' % (directory,run_nb)):
-		os.makedirs('%s/mcmcresults_%s' % (directory,run_nb))
-		os.makedirs('%s/mcmcresults_%s/plots' % (directory,run_nb))
-		os.makedirs('%s/mcmcresults_%s/prediction_data' % (directory,run_nb))
-		filename = ('%s/mcmcresults_%s' % (directory,run_nb))
+# 	while os.path.exists('%s/mcmcresults_%s' % (directory,run_nb)):
+# 		run_nb+=1
+# 	if not os.path.exists('%s/mcmcresults_%s' % (directory,run_nb)):
+# 		os.makedirs('%s/mcmcresults_%s' % (directory,run_nb))
+# 		os.makedirs('%s/mcmcresults_%s/plots' % (directory,run_nb))
+# 		os.makedirs('%s/mcmcresults_%s/prediction_data' % (directory,run_nb))
+# 		filename = ('%s/mcmcresults_%s' % (directory,run_nb))
 
-	print '\nInput file shape', final_elev.shape, '\n'
-	run_nb_str = 'mcmcresults_' + str(run_nb)
+# 	print '\nInput file shape', final_elev.shape, '\n'
+# 	run_nb_str = 'mcmcresults_' + str(run_nb)
 
-	bl_mcmc = bayeslands_mcmc(muted, simtime, samples, final_elev, final_erdp, final_erdp_pts, erdp_coords, filename, xmlinput, erodlimits, rainlimits, mlimit, nlimit, run_nb_str, likl_sed)
-	bl_mcmc.sampler()
+# 	bl_mcmc = bayeslands_mcmc(muted, simtime, samples, final_elev, final_erdp, final_erdp_pts, erdp_coords, filename, xmlinput, erodlimits, rainlimits, mlimit, nlimit, run_nb_str, likl_sed)
+# 	bl_mcmc.sampler()
 
-	print '\nsuccessfully sampled\nFinished simulations'
+# 	print '\nsuccessfully sampled\nFinished simulations'
 
-if __name__ == "__main__": main()
+# if __name__ == "__main__": main()

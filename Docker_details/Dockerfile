@@ -1,13 +1,8 @@
 #To build this docker file
-#docker build -t ptbayeslands .
+#docker build -t bayeslands .
 
 #To run this docker build
-#docker run -p 8888:8888 ptbayeslands
-
-# To get out the profile_mpi and run.sh of this docker file, run it
-# docker run -ti -v $(pwd):/workspace -p 8888:8888 badlandsmodel/pybadlands-demo-dev
-# Then browse it with this
-# docker exec -it 48b4fb5b215e bash
+#docker run -p 8888:8888 bayeslands
 
 # Pull base image.
 FROM badlandsmodel/pybadlands-dependencies
@@ -42,7 +37,7 @@ RUN mkdir /workspace
 
 
 # Copy test files to workspace
-RUN cp -av /build/Bayeslands_Workshop/ /workspace/
+RUN cp -av /build/Bayeslands_Workshop/ /workspace
 # RUN cp -av /build/pyBadlands-Companion/notebooks/* /workspace/companion/
 # RUN cp -av /build/paralleltemp_Bayeslands/ptBayeslands_mountain.py /workspace/scripts
 
@@ -50,13 +45,18 @@ RUN cp -av /build/Bayeslands_Workshop/ /workspace/
 #RUN chmod +x /build/run.sh
 
 # setup space for working in
-VOLUME /workspace/volume
+#VOLUME /workspace/volume
 
 # launch notebook
-WORKDIR /workspace
+#WORKDIR /workspace
 EXPOSE 8888
 ENTRYPOINT ["/usr/local/bin/tini", "--"]
 
 ENV LD_LIBRARY_PATH=/workspace/volume/Bayeslands_Workshop/pyBadlands/libUtils:/build/Bayeslands_Workshop/pyBadlands/libUtils
 #CMD /build/run.sh
 CMD jupyter notebook --ip=0.0.0.0 --no-browser --allow-root 
+
+# To get out the profile_mpi and run.sh of this docker file, run it
+# docker run -ti -v $(pwd):/workspace -p 8888:8888 badlandsmodel/pybadlands-demo-dev
+# Then browse it with this
+# docker exec -it 48b4fb5b215e bash

@@ -4,7 +4,7 @@
     <!-- Regular grid structure -->
     <grid>
         <!-- Digital elevation model file path -->
-        <demfile>Examples/mountain/data/nodes.csv</demfile>
+        <demfile>mountain/data/nodes.csv</demfile>
         <!-- Boundary type: flat, slope, fixed or wall -->
         <boundary>fixed</boundary>
         <!-- Optional parameter (integer) used to decrease TIN resolution.
@@ -37,7 +37,7 @@
             <!-- Displacement end time [a] -->
             <dend>50000000.0</dend>
             <!-- Displacement map [m] -->
-            <dfile>data/uplift.csv</dfile>
+            <dfile>mountain/data/uplift.csv</dfile>
         </disp>
     </tectonic>
 

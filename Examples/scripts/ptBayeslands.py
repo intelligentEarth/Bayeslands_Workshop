@@ -6,7 +6,7 @@
 from __future__ import print_function, division
 
 import matplotlib as mpl
-mpl.use('Agg')
+#mpl.use('Agg')
 import matplotlib.pyplot as plt
 import multiprocessing
 import numpy as np
@@ -42,7 +42,7 @@ import sys, os
 import plotly
 import plotly.plotly as py
 from plotly.graph_objs import *
-plotly.offline.init_notebook_mode()
+#plotly.offline.init_notebook_mode()
 from plotly.offline.offline import _plot_html
 import pandas
 

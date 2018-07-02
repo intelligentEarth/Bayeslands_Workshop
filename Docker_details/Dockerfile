@@ -45,16 +45,16 @@ RUN cp -av /build/Bayeslands_Workshop/ /workspace
 #RUN chmod +x /build/run.sh
 
 # setup space for working in
-#VOLUME /workspace/volume
+VOLUME /workspace/volume
 
 # launch notebook
-#WORKDIR /workspace
+WORKDIR /workspace
 EXPOSE 8888
 ENTRYPOINT ["/usr/local/bin/tini", "--"]
 
-ENV LD_LIBRARY_PATH=/workspace/volume/Bayeslands_Workshop/pyBadlands/libUtils:/build/Bayeslands_Workshop/pyBadlands/libUtils
+ENV LD_LIBRARY_PATH=/workspace/Bayeslands_Workshop/pyBadlands/libUtils:/build/Bayeslands_Workshop/pyBadlands/libUtils
 #CMD /build/run.sh
-CMD jupyter notebook --ip=0.0.0.0 --no-browser --allow-root 
+CMD jupyter notebook /workspace/Bayeslands_Workshop/StartHere.ipynb --ip=0.0.0.0 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.iopub_data_rate_limit=1.0e10
 
 # To get out the profile_mpi and run.sh of this docker file, run it
 # docker run -ti -v $(pwd):/workspace -p 8888:8888 badlandsmodel/pybadlands-demo-dev

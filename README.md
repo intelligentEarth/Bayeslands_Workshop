@@ -45,7 +45,7 @@ make
 cd -
 pip install -e Bayeslands_Workshop
 ```
-Then launch the [](StartHere.ipynb) notebook, that resembles the readme file you are reading now!
+Then launch the [StartHere.ipynb](StartHere.ipynb) notebook, that resembles the readme file you are reading now!
 
 #### Dependecies for compiliation
 

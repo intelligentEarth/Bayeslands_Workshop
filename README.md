@@ -3,9 +3,9 @@
 *Part of the badlands (Basin & landscape dynamics) suite* from the The University of Sydney  
 
 These materials are designed to give you a brief introduction to the BADLANDS (Basin and Landscape Dynamics) modelling code, extended functionality provided by pyBadlands, the Bayesian inference methods in Bayeslands, and additional helper tools. 
-See https://github.com/badlands-model/pyBadlands and the repositories therin for details on various Badlands/Bayelands incantations.
+See https://github.com/badlands-model/ and the repositories therin for details on various Badlands/Bayelands incantations.
 
-[email us](mailto:tristan.salles@sydney.edu.au)
+[email us](mailto:nathaniel.butterworth@sydney.edu.au)
 
 
 ## Installation
@@ -45,6 +45,7 @@ make
 cd -
 pip install -e Bayeslands_Workshop
 ```
+Then launch the [](StartHere.ipynb) notebook, that resembles the readme file you are reading now!
 
 #### Dependecies for compiliation
 

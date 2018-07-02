@@ -17,7 +17,7 @@ This repo is at http://github.com/badlands-model/Bayeslands-Workshop
 
 The easiest way to install and run the **Bayeslands Workshop** is by downloading through Docker.
 
-Download the [dockerfile](https://github.com/badlands-model/Bayeslands_Workshop/blob/master/Docker_details/Dockerfile) 
+Download the [dockerfile](Docker_details/Dockerfile) 
 
 Change into the folder with the docker file, then execute:
 
@@ -25,7 +25,7 @@ Change into the folder with the docker file, then execute:
 docker build -t bayeslands . 
 ```
 
-Then to run, excute:
+Then to run, execute:
 
 ```
 docker run -p 8888:8888 bayeslands
@@ -43,9 +43,26 @@ git clone https://github.com/badlands-model/Bayeslands_Workshop.git
 cd Bayeslands_Workshop/pyBadlands/libUtils
 make 
 cd -
-pip install -e /build/Bayeslands_Workshop
+pip install -e Bayeslands_Workshop
 ```
 
+#### Dependecies for compiliation
+
+If you compile this workshop locally, then several dependencies (easily installed with anaconda and pip) are required. These steps should get you an evironment ready to compile pyBadlands (above).
+
+```
+conda create --name pybad python=2.7.13 
+source activate pybad
+conda install jupyter h5py markupsafe numba=0.35.0 singledispatch backports_abc certifi jsonschema ipyparallel
+conda install path.py matplotlib=2.0.2 pandas scipy=0.19.1 basemap=1.0.7 mpi4py plotly  Cython==0.20 
+conda install PIL  
+pip install ez_setup colorlover cmocean scikit-fuzzy pyevtk zmq git+https://github.com/badlands-model/triangle
+
+git clone https://github.com/awickert/gFlex.git 
+cd gFlex/
+python setup.py install
+cd ..
+```
 
 
 ## Workshop
@@ -57,17 +74,18 @@ Following the notebooks in order will guide you through understanding how the Ba
 
 The pre-processing notebooks will help you to create surface grids for generic, real (based on etopo1) topographic/bathymetric datasets.
 
-* [Generic Surface](https://github.com/badlands-model/Bayeslands_Workshop/blob/master/Examples/topoCreate.ipynb): generic surface generation notebook.
-* [etopo1 Surface](https://github.com/badlands-model/Bayeslands_Workshop/blob/master/Examples/etopoGen.ipynb): etopo1 surface generation notebook.
-* [Bayeslands Surface](https://github.com/badlands-model/Bayeslands_Workshop/blob/master/Examples/bl_topogenr.ipynb): surface to run and test models against.
+* [Generic Surface](Examples/topoCreate.ipynb): generic surface generation notebook.
+* [etopo1 Surface](Examples/etopoGen.ipynb): etopo1 surface generation notebook.
+* [Bayeslands Surface](Examples/bl_topogenr.ipynb): surface to run and test models against.
 
 
 ### Running Badlands and Bayeslands
 
 We provide a full examples that create a surface and then runs multiple simulations to estimate uncertainties in your parameter selections.
 
-* [Bayeslands Crater Example](https://github.com/badlands-model/Bayeslands_Workshop/blob/master/Examples/bl_mcmc.ipynb): surface to run and test models against.
-* [PT Bayeslands Crater Example](https://github.com/badlands-model/Bayeslands_Workshop/blob/master/Examples/ptBayeslands.ipynb): surface to run and test models against using parallel tempering.
+* [Badlands Mountain Example](Examples/mountain.ipynb): running a standard Badlands model.
+* [Bayeslands Crater Example](Examples/bl_mcmc.ipynb): surface to run and test models against.
+* [PT Bayeslands Crater Example](Examples/ptBayeslands.ipynb): surface to run and test models against using parallel tempering.
 
  
  
@@ -75,7 +93,7 @@ We provide a full examples that create a surface and then runs multiple simulati
 
 Many post processing analysis steps can be done to produce various figures and interrogate different parts of the numerical model.
 
-* [Likelihood surface creation](https://github.com/badlands-model/Bayeslands_Workshop/blob/master/Examples/bl_surflikl.ipynb): explores the the parameter space in evaluating the model.
+* [Likelihood surface creation](Examples/bl_surflikl.ipynb): explores the the parameter space in evaluating the model.
 
 
 # Additional notes
@@ -86,7 +104,7 @@ Many post processing analysis steps can be done to produce various figures and i
 
 **pyBadlands** was an extension to Badlands that allowed for easy manipulation of model parameters, input files, execution, etc via the Python programming language.
 
-**Bayeslands** uses pyBadlands and applies Bayesian inference to the Badlands models to essentially provide estimates of error. It runs 1000's of Badlands models with slightly different parameter choices, and compares the results against a 'known' solution to estimate an error.
+**Bayeslands** uses pyBadlands and applies Bayesian inference to the Badlands models to essentially provide estimates of error. It runs 1000's of Badlands models with slightly different parameter choices, and compares the results against a 'known' solution to estimate an error. There are different versions of Bayeslands being developed that use different techniques (paralleltempering, surrogate assissted) to optimise accuracy and exploration efficiency in the models with different trade-offs.
 
 
 ## Jupyter in a nutshell
@@ -133,4 +151,3 @@ Go back to the rendered form of the cell by 'running' it.
 [Markdown Website](http://daringfireball.net/projects/markdown/)  
 [Mathjax Website](http://docs.mathjax.org)  
 [Jupyter Notebooks](http://www.jupyter.org)
-

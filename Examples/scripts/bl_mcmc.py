@@ -430,7 +430,7 @@ class bayeslands_mcmc():
 
 			sq_error_erdp_pts = np.sum(np.square(pred_erdp_pts_vec[self.sim_interval[i]] - self.real_erdp_pts[i]))/real_erdp_pts.shape[1]
 			sq_error = sq_error_elev+ sq_error_erdp_pts
-			print 'Using sediment pts in the likelihood'
+# 			print 'Using sediment pts in the likelihood'
 		
 		else:
 			likelihood = np.sum(likelihood_elev)
@@ -504,9 +504,9 @@ class bayeslands_mcmc():
 		step_eta_erdp = np.abs(eta_erdp*0.02)
 		step_eta_erdp_pts = np.abs(eta_erdp_pts*0.02)
 
-		print 'eta_elev = ', eta_elev, 'step_eta_elev', step_eta_elev
-		print 'eta_erdp = ', eta_erdp, 'step_eta_erdp', step_eta_erdp
-		print 'eta_erdp_pts = ', eta_erdp_pts, 'step_eta_erdp_pts', step_eta_erdp_pts
+# 		print 'eta_elev = ', eta_elev, 'step_eta_elev', step_eta_elev
+# 		print 'eta_erdp = ', eta_erdp, 'step_eta_erdp', step_eta_erdp
+# 		print 'eta_erdp_pts = ', eta_erdp_pts, 'step_eta_erdp_pts', step_eta_erdp_pts
 		# prior_likelihood = 1
 
 		# Recording experimental conditions
@@ -599,7 +599,7 @@ class bayeslands_mcmc():
 
 			eta_erdp_pts_pro = eta_erdp_pts + np.random.normal(0, step_eta_erdp_pts, 1)
 			tau_erdp_pts_pro = math.exp(eta_erdp_pts_pro)
-			print 'eta_el', eta_elev_pro, 'eta_ero', eta_erdp_pro, 'eta_ero_pts', eta_erdp_pts_pro, 'tau_el', tau_elev_pro, 'tau_ero', tau_erdp_pro, 'tau_ero_pts', tau_erdp_pts_pro
+# 			print 'eta_el', eta_elev_pro, 'eta_ero', eta_erdp_pro, 'eta_ero_pts', eta_erdp_pts_pro, 'tau_el', tau_elev_pro, 'tau_ero', tau_erdp_pro, 'tau_ero_pts', tau_erdp_pts_pro
 
 			# ++++++++++++++++++++++++++++++
 

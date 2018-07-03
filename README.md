@@ -1,11 +1,11 @@
 # Bayeslands Workshop
 
-*Part of the badlands (Basin and Landscape Dynamics) suite* from the The University of Sydney  
+*Part of the badlands (Basin & landscape dynamics) suite* from the The University of Sydney  
 
 These materials are designed to give you a brief introduction to the BADLANDS (Basin and Landscape Dynamics) modelling code, extended functionality provided by pyBadlands, the Bayesian inference methods in Bayeslands, and additional helper tools. 
-See https://github.com/badlands-model/ and the repositories therin for details on various Badlands/Bayeslands incantations.
+See https://github.com/badlands-model/pyBadlands and the repositories therin for details on various Badlands/Bayelands incantations.
 
-[Email us](mailto:nathaniel.butterworth@sydney.edu.au)
+[email us](mailto:tristan.salles@sydney.edu.au)
 
 
 ## Installation
@@ -31,7 +31,7 @@ Then to run, execute:
 docker run -p 8888:8888 bayeslands
 ```
 
-From there you can navigate this folder structure within the Jupyter notebook environment from your web browser.
+From there, launch a web browser on your local machine, navigate to 0.0.0.0:8888 and you can explore the folder structure within the Jupyter notebook environment. Click on the StartHere.ipynb (i.e. this notebook) for some instructions! Note, you may need to use the --no-cache in the docker build command to re-download the git repo and install a fresh copy.
 
 
 ### Via Compile
@@ -45,7 +45,6 @@ make
 cd -
 pip install -e Bayeslands_Workshop
 ```
-Then launch the [StartHere.ipynb](StartHere.ipynb) notebook, that resembles the readme file you are reading now!
 
 #### Dependecies for compiliation
 
@@ -71,13 +70,12 @@ cd ..
 Following the notebooks in order will guide you through understanding how the Badlands and Bayeslands models are built and executed. Hopefully you should be able to replace these example datasets with your own workflows.
 
 
-### Pre-processing
+### Building input
 
-The pre-processing notebooks will help you to create surface grids for generic, real (based on etopo1) topographic/bathymetric datasets.
+These notebooks will help you to create surface grids for generic, real (based on etopo1) topographic/bathymetric datasets.
 
 * [Generic Surface](Examples/topoCreate.ipynb): generic surface generation notebook.
 * [etopo1 Surface](Examples/etopoGen.ipynb): etopo1 surface generation notebook.
-* [Bayeslands Surface](Examples/bl_topogenr.ipynb): surface to run and test models against.
 
 
 ### Running Badlands and Bayeslands
@@ -85,12 +83,12 @@ The pre-processing notebooks will help you to create surface grids for generic, 
 We provide a full examples that create a surface and then runs multiple simulations to estimate uncertainties in your parameter selections.
 
 * [Badlands Mountain Example](Examples/mountain.ipynb): running a standard Badlands model.
-* [Bayeslands Crater Example](Examples/bl_mcmc.ipynb): surface to run and test models against.
+* [Bayeslands Crater Surface](Examples/bl_topogenr.ipynb): create a surface to run and test models against.
+* [Bayeslands Crater Example](Examples/bl_mcmc.ipynb): run bayesian inference on a badlands model.
 * [PT Bayeslands Crater Example](Examples/ptBayeslands.ipynb): surface to run and test models against using parallel tempering.
 
  
- 
-### Post-processing
+### Post-processing and other tools
 
 Many post processing analysis steps can be done to produce various figures and interrogate different parts of the numerical model.
 

@@ -6,6 +6,7 @@
 
 # Pull base image.
 FROM badlandsmodel/pybadlands-dependencies
+RUN pip install -U scikit-learn
 
 MAINTAINER Nathaniel Butterworth
 

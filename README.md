@@ -87,6 +87,7 @@ We provide a full examples that create a surface and then runs multiple simulati
 * [Bayeslands Crater Example](Examples/bl_mcmc.ipynb): run bayesian inference on a badlands model.
 * [PT Bayeslands Crater Example](Examples/ptBayeslands.ipynb): surface to run and test models against using parallel tempering.
 
+Additional [theory on Bayseian methods](Bayeslands_Workshop2018.pdf).
  
 ### Post-processing and other tools
 
@@ -105,6 +106,10 @@ Many post processing analysis steps can be done to produce various figures and i
 
 **Bayeslands** uses pyBadlands and applies Bayesian inference to the Badlands models to essentially provide estimates of error. It runs 1000's of Badlands models with slightly different parameter choices, and compares the results against a 'known' solution to estimate an error. There are different versions of Bayeslands being developed that use different techniques (paralleltempering, surrogate assissted) to optimise accuracy and exploration efficiency in the models with different trade-offs.
 
+## Papers
+
+#### Bayeslands https://arxiv.org/abs/1805.03696
+#### Parallel Tempering Bayeslands https://arxiv.org/abs/1806.10939
 
 ## Jupyter in a nutshell
 

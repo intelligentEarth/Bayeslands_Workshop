@@ -31,7 +31,7 @@ Then to run, execute:
 docker run -p 8888:8888 bayeslands
 ```
 
-From there, launch a web browser on your local machine, navigate to 0.0.0.0:8888 and you can explore the folder structure within the Jupyter notebook environment. Click on the StartHere.ipynb for some instructions! Note, you may need to use the --no-cache in the docker build command to re-download the git repo and install a fresh copy.
+From there, launch a web browser on your local machine, navigate to 0.0.0.0:8888 and you can explore the folder structure within the Jupyter notebook environment. Click on the StartHere.ipynb for some instructions! Note, you may need to use the --no-cache flag in the docker build command to re-download the git repository and install a up-to-date copy.
 
 
 ### Via Compile
@@ -111,48 +111,7 @@ Many post processing analysis steps can be done to produce various figures and i
 #### Bayeslands https://arxiv.org/abs/1805.03696
 #### Parallel Tempering Bayeslands https://arxiv.org/abs/1806.10939
 
-## Jupyter in a nutshell
-
-
-### What is this ?
-
-This is an example of the iPython / Jupyter notebook system. They are a form of literate programming in which we can mix textbook instruction and explanations with code (in this case, python) that can also be run and edited. The text and mathematics in the notebooks requires a little preliminary learning. 
-
-**Note:**
-*The docker containers will not save your information when you will refresh the notebooks. So the content that you will create is ephemeral: it will disappear with the container if you do not capture the output by mounting the volume or copying the data to your local machine. Therefore it is better to attach a volume to the docker image. You can do that using the **Kitematic** interface and selecting a folder where you will store your own notebooks as well as your Badlands input and output files.*
-
-*The docker containers system settings are configurable in the [VirtualBox](http://www.virtualbox.org) which is running in the background of each docker image. For example, you can change the Base Memory and the Number of Processors associated to the vm.*
-
-
-### Markdown
-
-You can document your iPython notebooks by making some cells into **Markdown** cells. Markdown is a way of formatting text that is supposed to be almost as readable un-rendered as when it is tidied up. You might argue that it looks equally bad either way, but that's tough because the notebooks use it and that's how I want you to produce nice looking output to hand in as an assignment !
-
-If you look at the **Markdown** cells as source code (by double-clicking on them) you will see how the raw text looks. To get back to the pretty version of the text, hit shift-enter.
-
-### Maths
-
-In a browser, you can render equations using a javascript tool called **Mathjax** which is build into the iPython notebooks. 
-
-You can build in symbols to your text such as $\pi$ and $\epsilon$ if you use the \$ signs to indicate where your equations begin and end, and you know enough $\LaTeX$ [try it here !](http://www.codecogs.com/latex/eqneditor.php) to get by.
-
-Equations in `display` mode are written like this (again look at the source for this cell to see what is used)
-
-\\[ e^{i\pi} + 1 = 0 \\]
-
-or even like this
-
-\begin{equation}
-%%
-    \nabla^4 \psi = \frac{\partial T}{\partial x}
-%%    
-\end{equation}
-
-Go back to the rendered form of the cell by 'running' it.
-
 ### Links 
 
-[Markdown Website](http://daringfireball.net/projects/markdown/)  
-[Mathjax Website](http://docs.mathjax.org)  
 [Jupyter Notebooks](http://www.jupyter.org)  
 [Bayes, Probability, and Statistics](https://towardsdatascience.com/basic-probability-theory-and-statistics-3105ab637213)

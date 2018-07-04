@@ -149,4 +149,5 @@ Go back to the rendered form of the cell by 'running' it.
 
 [Markdown Website](http://daringfireball.net/projects/markdown/)  
 [Mathjax Website](http://docs.mathjax.org)  
-[Jupyter Notebooks](http://www.jupyter.org)
+[Jupyter Notebooks](http://www.jupyter.org)  
+[Bayes, Probability, and Statistics](https://towardsdatascience.com/basic-probability-theory-and-statistics-3105ab637213)

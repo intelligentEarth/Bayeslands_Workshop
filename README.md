@@ -31,7 +31,7 @@ Then to run, execute:
 docker run -p 8888:8888 bayeslands
 ```
 
-From there, launch a web browser on your local machine, navigate to 0.0.0.0:8888 and you can explore the folder structure within the Jupyter notebook environment. Click on the StartHere.ipynb (i.e. this notebook) for some instructions! Note, you may need to use the --no-cache in the docker build command to re-download the git repo and install a fresh copy.
+From there, launch a web browser on your local machine, navigate to 0.0.0.0:8888 and you can explore the folder structure within the Jupyter notebook environment. Click on the StartHere.ipynb for some instructions! Note, you may need to use the --no-cache in the docker build command to re-download the git repo and install a fresh copy.
 
 
 ### Via Compile
